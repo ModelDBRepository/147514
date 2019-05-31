@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <header>Neuron model to probe effects of altered dendritic complexity</header>
+    </head>
+    <body>
+        <p>Author: Luuk van der Velden, University of Amsterdam, 2011</p>
+        <p>Reference paper: Altered dendritic complexity affects firing properties of cortical layer 2/3 pyramidal neurons in mice lacking the 5-HT3A receptor <a href="http://jn.physiology.org/content/108/5/1521">Link</a> </p>
+        <p>PubMed ID: 22696545</p>
+        
+        <h1>Introduction:</h1>
+            <p>This model of a simplified layer 2/3 pyramidal model is based on earlier work by Mainen and Sejnowski (1996).<br>
+                It enables the manipulation of the dendritic complexity, as defined by the number of branch levels in the tree.<br>
+                The simplified model consists of binary symmetric dendritic trees with a fixed apical diameter.<br>
+                Rall's diameter rule is applied to calculate the diameters of the higher order branches.                
+            </p>
+            <p>
+                This model is provided <strong>as is</strong> and without warranty, purely for research and educational purposes, have fun!
+            </p>          
+            
+        <h1>Motivation:</h1>
+            <p> The model was created to look at the effects of altered dendritic complexity in layer 2/3 pyramidal neurons.<br> 
+                The 5-HT3A knockout mouse was previously shown to express increased dendritic complexity in its layer 2/3 pyramidal neurons.<br>
+                With this model we accompanied our experimental findings and showed that altered dendritic complexity could explain many of the electrophysiological differences we found.
+                </p>
+        <h1>Model makeup:</h1>
+            <p>The model consists of a biophysical and morphological layout typical for cortical pyramidal neurons, based on previous efforts (a.o. Mainen and Sejnowski, 1996).<br>
+                 We included calcium diffusion dynamics as described in the NEURON book (Carnevale and Hines, 2006).<br>
+                 To allow study of dendritic complexity, the number of branch levels can be manipulated by changing the 'branch_levels' parameter from 0 to 6.<br>
+                 The Rall diameter rule is applied to keep the dendritic trees passively equivalent.<br>
+                 The model was written in one HOC file, with sections for Topology, Geometry, Biophysics, Instrumentation and Experimental control.<br>
+                 It executes by calling its own initialization and run function, subsequently various parameters (voltages, calcium concentrations) are written to a text file, for further use.<br>
+                 This model is identical to the one used to generate figures 4 (A to C) and figure 5.
+            </p>
+            
+         <h1>Usage:</h1>
+               <p>To start the simulation demo either auto-launch under ModelDB or<br/></p>
+               <p>Under unix systems:<br> 
+                   to compile the mod files use the command 'nrnivmodl' and run the simulation hoc file with the command 'nrngui altered_complexity_model.hoc'</p>
+
+                <p>Under Windows systems:<br>
+                To compile the mod files use the "mknrndll" command. A double click on the simulation file altered_complexity_model.hoc will open the simulation window.</p>   
+
+                <p>Once the simulation has started:<br>
+                there is a brief pause and then you should see the following figure:
+<br/><br/><img src="./screenshot.png" alt="screenshot"></p>
+    </body>
+</html>
